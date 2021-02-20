@@ -19,7 +19,7 @@
 			],
 			"group": {
 				"isDefault": true,
-				"kind":"build"
+			"kind": "build"
 			},
 			"detail": "compilatore: /usr/bin/gcc"
 		}
