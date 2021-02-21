@@ -10,6 +10,6 @@ int main(void)
     }
 
     FILE *f = fopen("prova.txt", "w");
-    printf("hello world");
+    fprintf(f,"hello world");
     return 0;
 }
