@@ -3,11 +3,11 @@
 
 void stampa_tavola_pitagorica(FILE *f, unsigned int n)
 {
-    int num=0;
-    int x=1;
-    for(size_t i=0;i<n;i++)
+    int num=0;//numero da stampare
+    int x=1;//variabile da aumentare a seconda della riga
+    for(size_t i=0;i<n;i++)//righe
     {
-        for(size_t r=0;r<n;r++)
+        for(size_t r=0;r<n;r++)//colonne
         {
             num=num+x;
             fprintf(f,"%d ",num);
