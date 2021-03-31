@@ -4,11 +4,11 @@
 		{
 			"type": "cppbuild",
 			"label": "C/C++: gcc compila il file attivo",
-			"command": "/usr/bin/gcc",
+			"command": "/usr/bin/clang",
 			"args": [
 				"-g",
-				"${fileDirname}/**.c",
-				//"${fileDirname}/*.c",
+				"${fileDirname}/*.c",	
+				"${fileDirname}/*.h",	
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}.out"
 			],
@@ -22,7 +22,7 @@
 				"isDefault": true,
 			"kind": "build"
 			},
-			"detail": "compilatore: /usr/bin/gcc"
+			"detail": "compilatore: /usr/bin/clang"
 		}
 	]
 }
