@@ -1,10 +1,5 @@
-#include <stdlib.h>
+#include "matrix.h"
 
-struct matrix {
-    size_t rows, cols;
-    double *data;
-};
-//#include "matrix.h"
 struct matrix *mat_permute_rows(const struct matrix *m, const size_t *p)
 {
     if(m==NULL)
@@ -29,15 +24,6 @@ struct matrix *mat_permute_rows(const struct matrix *m, const size_t *p)
     return new;
 }
 
-int main(void)
-{
-    struct matrix a={3,3,NULL};
-    double data[]={1,2,3,4,5,6,7,8,9};
-    a.data=&data;
-    size_t vet[]={1,2,0};
-    mat_permute_rows(&a,vet);
-    return 0;
-}
 
 
 /*FILE.H
