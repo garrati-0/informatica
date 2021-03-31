@@ -2,5 +2,9 @@
 
 int main(void)
 {
-    
+    struct matrix a = {3, 3, NULL};
+    double dat[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    a.data = dat;
+    mat_boolean(&a, 5, LE);
+    return 0;
 }
