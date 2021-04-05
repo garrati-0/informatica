@@ -3,7 +3,8 @@
 
 #include "stdlib.h"
 
-struct rational {
+struct rational
+{
     int num;
     unsigned int den;
 };
