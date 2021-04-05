@@ -5,10 +5,10 @@ int main(void)
     struct rational *sum = malloc(sizeof(struct rational));
     struct rational *a = malloc(sizeof(struct rational));
     struct rational *b = malloc(sizeof(struct rational));
-    a->num = 5;
-    a->den = 7;
-    b->num = -10;
-    b->den = 14;
+    a->num = 2;
+    a->den = 4;
+    b->num = 5;
+    b->den = 17;
     rational_sum(sum, a, b);
     return 0;
 }
