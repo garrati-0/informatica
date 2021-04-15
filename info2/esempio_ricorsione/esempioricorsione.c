@@ -16,6 +16,8 @@ int sommafinoa(int n)
     return sommafinoa(n-1)+n;//ricorsione
 }
 
+
+
 int main(void)
 {
     
