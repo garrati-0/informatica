@@ -35,6 +35,6 @@ bool cifre_duplicate_hex(unsigned int n)
 
  int main(void)
  {
-     cifre_duplicate_hex(10);
+     cifre_duplicate_hex(11);
      return 0;
  }
