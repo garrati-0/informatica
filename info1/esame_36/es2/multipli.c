@@ -34,7 +34,7 @@ int *rimuovi_multipli(const int *v, size_t size, size_t *newsize)
 
 int main(void)
 {
-    int vet[] = {3, 4, 5, 6, 7, 8, 9, 10};
+    int *vet = NULL;
     size_t *l = malloc(1 * sizeof(size_t));
     rimuovi_multipli(vet, 8, l);
     return 0;
