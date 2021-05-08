@@ -9,9 +9,7 @@ unsigned int irpef(unsigned int stipendio, unsigned int *scaglioni, unsigned int
     {
         i++;
         if (i == n)
-        {
             break;
-        }
     }
 
     if(i==1)
@@ -25,7 +23,8 @@ unsigned int irpef(unsigned int stipendio, unsigned int *scaglioni, unsigned int
     for (size_t k = 1;; k++)
     {
         x = aliquote[k - 1];
-        double y = x / 100;
+        double y = x / 100.0; // Mettendo 100.0 casto tutto a double ( da fare sempre per sicurezza quando si fanno divisioni )
+        // Altrimenti: double y = (double) (x / 100)
 
         if (k > 1)
         {
