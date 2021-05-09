@@ -8,10 +8,10 @@ struct rapporto *leggi_rapporti(const char *filename, uint16_t *n)
 
     size_t c = fread(n, sizeof(uint16_t), 1, f); //leggo quanti rapporti sono contenuti nel file
 
-    struct rapporto *a = malloc(*n * sizeof(struct rapporto));
+    struct rapporto *a = malloc(*n * sizeof(struct rapporto));//creo un vettore di n struct
     
 
-    for (size_t k = 0; k < *n; k++)
+    for (size_t k = 0; k < *n; k++)//inserisco i valori nelle struct
     {
         uint16_t *i = &a[k].id;
         char *h = &a[k].tipo;
