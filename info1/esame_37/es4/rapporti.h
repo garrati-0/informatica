@@ -1,6 +1,7 @@
 #if !defined RAPPORTI_H
 #define RAPPORTI_H
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdint.h> // Necessario per il tipo uint16_t
 struct rapporto {
     uint16_t id;
