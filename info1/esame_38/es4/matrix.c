@@ -2,7 +2,7 @@
 
 struct matrix *mat_delete_row(const struct matrix *m, size_t i)
 {
-    if (m == NULL || i > m->rows)
+    if (m == NULL || i > m->rows-1)
         return NULL;
 
     struct matrix *new = malloc(sizeof(struct matrix));
