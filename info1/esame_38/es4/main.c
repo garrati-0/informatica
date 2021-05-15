@@ -1,5 +1,5 @@
 #include "matrix.h"
-
+#include <stdio.h>
 int main(void)
 {
     struct matrix a ={3,3,NULL};

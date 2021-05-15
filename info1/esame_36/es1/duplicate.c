@@ -3,6 +3,7 @@
 #include "stdio.h"
 bool cifre_duplicate_oct(unsigned int n)
 {
+    printf("ciao");
     bool *v = calloc(8,sizeof(bool));
     size_t i = 0;
     while (n != 0) //trasformiamo il numero in base 8
