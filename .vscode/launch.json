@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C/C++: gcc compila il file attivo",
+            "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}.out",
@@ -13,7 +13,7 @@
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
+            "console": "externalTerminal",
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -22,8 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++: gcc compila il file attivo",
-            "miDebuggerPath": "/usr/bin/lldb-mi"
+            "preLaunchTask": "C/C++: gcc compila il file attivo"
         }
     ]
 }
