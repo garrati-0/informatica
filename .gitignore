@@ -1,4 +1,4 @@
-# Prerequisites
+  # Prerequisites
 *.d
 
 # Object files
@@ -56,3 +56,5 @@ dkms.conf
 *.out
 bin/*
 *.bin
+*.inp
+*.txt
