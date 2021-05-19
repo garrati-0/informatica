@@ -54,6 +54,6 @@ void stampa_a(uint8_t n)
 
 int main(void)
 {
-    stampa_a(50);
+    stampa_a(10);
     return 0;
 }
