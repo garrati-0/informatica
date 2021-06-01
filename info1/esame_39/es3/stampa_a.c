@@ -22,9 +22,6 @@ void stampa_a(uint8_t n)
             printf("\\\n");
             continue;
         }
-
-
-
         for (size_t s = 0; s < c-1; s++)
         {
             printf(" ");
