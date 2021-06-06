@@ -53,9 +53,13 @@ dkms.conf
 
 # VsCODE custom config
 
+*
+!/**/
+!*.*
+
 *.out
 bin/*
 *.bin
 *.inp
 *.txt
-*.
+
