@@ -17,7 +17,7 @@ struct dvec *read_dvec_comp(const char *filename)
     a->d = malloc(1 * sizeof(double));
 
 
-  double h=0.00000000;
+  short h=0;
     while (1)
     {
         size_t c = fread(&h,sizeof(16),1,f);
@@ -25,7 +25,7 @@ struct dvec *read_dvec_comp(const char *filename)
         break;
 
         //h=h*16;
-        h=-2.000000*2e14;
+        h=(double)h/16384;
         a->d[a->n]=h;
         a->n=a->n+1;
         a->d=realloc(a->d,(a->n+1)*sizeof(double));
