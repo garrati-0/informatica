@@ -20,6 +20,7 @@ void cornice(uint8_t h, uint8_t w)
     {
         if (i != w - 1)
         {
+            
             printf("/-\\");
             printf("|");
             continue;
