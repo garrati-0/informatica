@@ -39,11 +39,11 @@ void stampa_scomposizione(unsigned int n)
             count++;
             if (y == k - 1)
             {
-                printf("%d", count);
+                printf("%d\n", count);
             }
             else
             {
-                printf("%d *", count);
+                printf("%d * ", count);
             }
             count = 1;
         }
@@ -51,7 +51,7 @@ void stampa_scomposizione(unsigned int n)
         {
             if (y == k - 1)
             {
-                printf("%i", coeff[y]);
+                printf("%i\n", coeff[y]);
             }
             else
             {

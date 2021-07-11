@@ -17,8 +17,8 @@ int sommafinoa(int n)
 }
 
 int mcd(int m, int n)//esempio di ricorsione dove il risultato viene
-{                    //sintetizzaato via via che le chiamate ricorsive
-    if (m == n)      //sisuccendono
+{                    //sintetizzato via via che le chiamate ricorsive
+    if (m == n)      //si succendono
     {
         return m;
     }else{
