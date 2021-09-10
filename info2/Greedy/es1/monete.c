@@ -17,13 +17,13 @@ int *monete(int *tagli, size_t tagli_size, int buget)
 
     return res;
 }
-
+/*
 int main(void)
 {
     int tagli[] = {50, 20, 10, 5, 2, 1};
     int *res = monete(tagli, sizeof(tagli) / sizeof(int), 126); //sizeof(tagli)/sizeof(int) è il numero di elementi del vettore
     free(res);
-}
+}*/
 /*
 int tagli[] = {50, 20, 6, 5, 1}; con buget=10;
 non avrei ottenuto la soluzione ottima {5,5} ma
