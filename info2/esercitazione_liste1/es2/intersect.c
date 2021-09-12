@@ -1,9 +1,9 @@
 #include "list.h"
 //#include "load.h"
-Item *Intersect(const Item *i1,  const Item *i2)
+Item *Intersect(const Item *i1, const Item *i2)
 {
     Item *list = NULL;
-  const Item *tmp = i2;
+    const Item *tmp = i2;
     while (i1 != NULL)
     {
         while (i2 != NULL)
@@ -13,10 +13,10 @@ Item *Intersect(const Item *i1,  const Item *i2)
                 list = ListInsertBack(list, &i1->value);
                 break;
             }
-             i2 = i2->next;
+            i2 = i2->next;
         }
-        i2=tmp;
-        i1 = i1->next;  
+        i2 = tmp;
+        i1 = i1->next;
     }
     return list;
 }
