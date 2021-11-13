@@ -14,7 +14,7 @@ const ElemType *BstTreeMax(const Node *n)
     return BstTreeMax(n->right);
 }
 
-
+ 
 void TreeMaxRec(const Node *n, const ElemType **max,ElemType curr,ElemType level)
 {
         if (n == NULL)
