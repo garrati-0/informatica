@@ -2,9 +2,16 @@
 
 int main(void)
 {
-    for (int i = 0; i < 100; i++)
+    FILE *f = fopen("res/data_01.txt", "r");
+    if (f == NULL)
     {
-        printf("hello world\n");
+        printf("Errore apertura file\n");
+        return 1;
     }
-    return 0;
+    char s;
+   
+    fscanf(stdin,"%c",&s);
+
+    fclose(f);
 }
+//int *fprinf(FILE *stream,const char* format.....);

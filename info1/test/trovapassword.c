@@ -6,7 +6,7 @@ void azzerastr(char *s)
     {
         s[i]=0;
     }
-}
+} 
 char *trovapassword(size_t parole,char **str,char *password)
 {
     char *new=calloc(200,sizeof(char));
