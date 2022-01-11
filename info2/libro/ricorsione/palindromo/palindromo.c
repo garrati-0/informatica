@@ -34,5 +34,5 @@ int main(void)
 {
     const char *str = "osssso";
     bool ris = IsPalindromo(str);
-    return 0;
+     return 0;
 }
