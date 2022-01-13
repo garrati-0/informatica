@@ -1,27 +1,27 @@
 #include "list.h"
 
-int ListLength(const Item *i)
+int ListLength(const Item* i)
 {
-    int count = 0;
-    while (i != NULL)
+    if(i==NULL)
+    return 0;
+
+    int cont=0;
+    while(i!=NULL)
     {
-        ListWriteStdout(i);
-        count++;
+        cont++;
         i=i->next;
     }
-    return count;
+    return cont;
 }
 
 int main(void)
 {
-    int vect[] = {1, 2, 3, 4,5,6,7,8};
-    Item *List = ListCreateEmpty();
-    for (int i = 0; i < 8; i++)
+    Item *list=NULL;
+    int c[59]={1,2,3,4,5,6,7,8,9};
+    for(int i=0;i<59;i++)
     {
-        List = ListInsertBack(List, &vect[i]);
+        list=ListInsertBack(list,&c[i]);
     }
-
-    ListWriteStdout(List);
-    ListLength(List);
+    ListLength(list);
     return 0;
 }
