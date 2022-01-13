@@ -1,38 +1,39 @@
 #include "list.h"
-//#include "load.h"
+#include "load.h"
+#include <stdbool.h>
+
 Item *Diff(const Item *i1, const Item *i2)
 {
-    Item *list = NULL;
+    Item *i3 = NULL;
     const Item *tmp = i2;
-    bool count = false;
+    bool deep = true;
     while (i1 != NULL)
     {
         while (i2 != NULL)
         {
             if (i1->value == i2->value)
             {
-                count = true;
+                deep = false;
                 break;
             }
 
             i2 = i2->next;
         }
-        if (!count)
-            list = ListInsertBack(list, &i1->value);
+        if (deep)
+            i3 = ListInsertBack(i3, &i1->value);
 
+        deep = true;
         i2 = tmp;
-        count=false;
         i1 = i1->next;
     }
-    return list;
+    ListWriteStdout(i3);
+    return i3;
 }
-/*
+
 int main(void)
 {
-    Item *l1 = ListLoad("res/data_00.txt");
-    Item *l2 = ListLoad("res/data_01.txt");
-
-    Item *list = Diff(l1, l2);
-
+    Item *i1 = ListLoad("res/data_00.txt");
+    Item *i2 = ListLoad("res/data_01.txt");
+    Diff(i1, i2);
     return 0;
-}*/
+}

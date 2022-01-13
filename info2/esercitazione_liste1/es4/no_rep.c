@@ -1,91 +1,92 @@
 #include "list.h"
-//#include "load.h"
-
-Item *DiffNoRep(const Item *i1, const Item *i2)
-{        
-
-    Item *list = NULL;
-    const Item *tmp = i2;
-    bool count = false;
-    while (i1 != NULL)
-    {
-        while (i2 != NULL)
-        {
-            if (i1->value == i2->value)
-            {
-                count = true;
-                break;
-            }
-
-            i2 = i2->next;
-        }
-        if (!count)
-        {
-            Item* l=list;
-            while (list != NULL)
-            {
-                if (i1->value == list->value)
-                {
-                    count = true;
-                }
-                list=list->next;
-            }
-            list=l;
-            if (!count)
-                list = ListInsertBack(list, &i1->value);
-        }
-
-        i2 = tmp;
-        count = false;
-        i1 = i1->next;
-    }
-    return list;
-}
+#include "load.h"
+#include <stdbool.h>
 
 Item *IntersectNoRep(const Item *i1, const Item *i2)
 {
-    Item *list = NULL;
+    Item *i3 = NULL;
     const Item *tmp = i2;
     bool count = false;
+    Item *tmpi3 = NULL;
     while (i1 != NULL)
     {
         while (i2 != NULL)
         {
-            if (i1->value == i2->value)
+            if (i1->value == i2->value) // verifico se i numeri sono uguali
             {
-                count = true;
-                break;
+                count = true; // imposto true poiche il valore e' uguale
             }
             i2 = i2->next;
         }
         if (count)
         {
-            Item*l=list;
-            while (list != NULL)
+            tmpi3 = i3;
+            while (i3 != NULL)
             {
-                if (i1->value == list->value)
-                {
+                if (i1->value == i3->value)
                     count = false;
-                }
-                list=list->next;
+
+                i3 = i3->next;
             }
-            list=l;
+            i3 = tmpi3;
             if (count)
-                list = ListInsertBack(list, &i1->value);
+                i3 = ListInsertBack(i3, &i1->value);
         }
+
+        count = false;
+        i1 = i1->next;
         i2 = tmp;
-        count=false;
+    }
+    ListWriteStdout(i3);
+    return i3;
+}
+
+Item *DiffNoRep(const Item *i1, const Item *i2)
+{
+    Item *i3 = NULL;
+    Item *tmpi3 = NULL;
+    const Item *tmp = i2;
+    bool count = true;
+    while (i1 != NULL)
+    {
+        while (i2 != NULL)
+        {
+            if (i1->value == i2->value)
+            {
+                count = false;
+                break;
+            }
+
+            i2 = i2->next;
+        }
+        if (count)
+        {
+            tmpi3 = i3;
+            while (i3 != NULL)
+            {
+                if (i1->value == i3->value)
+                    count = false;
+
+                i3 = i3->next;
+            }
+            i3 = tmpi3;
+            if (count)
+                i3 = ListInsertBack(i3, &i1->value);
+        }
+
+        count = true;
+        i2 = tmp;
         i1 = i1->next;
     }
-    return list;
+
+    ListWriteStdout(i3);
+    return i3;
 }
-/*
+
 int main(void)
 {
-    Item *l1 = ListLoad("res/data_00.txt");
-    Item *l2 = ListLoad("res/data_01.txt");
-
-    Item *list = DiffNoRep(l1, l2);
-    Item *list1 = IntersectNoRep(l1, l2);
+    Item *i1 = ListLoad("res/data_00.txt");
+    Item *i2 = ListLoad("res/data_01.txt");
+    IntersectNoRep(i1, i2);
     return 0;
-}*/
+}

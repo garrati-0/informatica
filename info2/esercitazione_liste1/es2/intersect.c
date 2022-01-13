@@ -1,32 +1,34 @@
 #include "list.h"
-//#include "load.h"
-Item *Intersect(const Item *i1, const Item *i2)
+#include "load.h"
+
+Item *Intersect(const Item *i1,const Item* i2)
 {
-    Item *list = NULL;
-    const Item *tmp = i2;
-    while (i1 != NULL)
+    if(i1==NULL || i2==NULL)
+    return NULL;
+
+    Item *i3=NULL;
+    const Item *tmp=i2;
+    while(i1!=NULL)
     {
-        while (i2 != NULL)
+        while (i2!=NULL)
         {
-            if (i1->value == i2->value)
+            if(i1->value==i2->value)
             {
-                list = ListInsertBack(list, &i1->value);
-                break;
+                i3=ListInsertBack(i3,&i1->value);
             }
-            i2 = i2->next;
+           i2=i2->next;
         }
-        i2 = tmp;
-        i1 = i1->next;
+        i1=i1->next;
+        i2=tmp;
     }
-    return list;
+    ListWriteStdout(i3);
+    return i3;
 }
-/*
+
 int main(void)
 {
-    Item *l1 = ListLoad("res/data_00.txt");
-    Item *l2 = ListLoad("res/data_01.txt");
-
-    Item *list = Intersect(l1, l2);
-
+    Item *l1=ListLoad("res/data_00.txt");
+    Item *l2=ListLoad("res/data_01.txt");
+    Intersect(l1,l2);
     return 0;
-}*/
+}

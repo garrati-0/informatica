@@ -3,39 +3,25 @@
 
 const ElemType *MaxElement(const Item *i)
 {
-    ElemType *max = NULL;
-    if (i == NULL)
-        return NULL;
+    if(i==NULL)
+    return NULL;
 
-  //  const Item *pre=i;
-    const Item *cur=i;
-    //Item *ris=NULL;
-     ElemType a=0;
-    max=&a;
-   // int count=0;
-    while (cur != NULL)
+    ElemType m=0;
+    const ElemType *max=&m;
+    while(i!=NULL)
     {
-    
-        if(cur->value>*max)
+        if(i->value>*max)
         {
-    //        ris = pre->next; 
-            max=&cur->value;       
+            max=&i->value;
         }
-       // count++;
-        cur=cur->next;
-
-        /*if(count>1)
-        {
-            pre=pre->next;
-        }*/
+        i=i->next;
     }
-
     return max;
 }
-/*
-int main(void)
+
+/*int main(void)
 {
-    Item *i = ListLoad("res/data_00.txt");
-    const ElemType *max = MaxElement(i);
+    Item *list=ListLoad("res/data_00.txt");
+    MaxElement(list);
     return 0;
 }*/

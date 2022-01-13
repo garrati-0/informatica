@@ -1,4 +1,5 @@
 #include "list.h"
+#include <stdio.h>
 
 Item *ListLoad(const char *filename)
 {
@@ -7,22 +8,22 @@ Item *ListLoad(const char *filename)
         return NULL;
 
     Item *list = NULL;
+    int num = 0;
     while (1)
     {
-        int n = 0;
-        int c = fscanf(f, "%d", &n);
+        int c = fscanf(f, "%d", &num);
         if (c != 1)
             break;
 
-        list = ListInsertHead(&n,list);
+        list =ListInsertBack(list,&num);
+        ListWriteStdout(list);
     }
     fclose(f);
     return list;
 }
-/*
+
 int main(void)
 {
-
-    Item *l = ListLoad("res/data_00.txt");
+    ListLoad("res/data_00.txt");
     return 0;
-}*/
+}

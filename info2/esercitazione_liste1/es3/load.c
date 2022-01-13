@@ -14,7 +14,7 @@ Item *ListLoad(const char *filename)
         if (c != 1)
             break;
 
-        list = ListInsertHead(&n,list);
+        list = ListInsertBack(list,&n);
     }
     fclose(f);
     return list;
