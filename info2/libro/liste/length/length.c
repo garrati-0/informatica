@@ -1,6 +1,6 @@
 #include "list.h"
 
-int ListLength(const Item* i)
+int ListOccorenze(const Item*i,const ElemType *e)
 {
     if(i==NULL)
     return 0;
@@ -8,20 +8,24 @@ int ListLength(const Item* i)
     int cont=0;
     while(i!=NULL)
     {
+        if(i->value==*e)
         cont++;
+
         i=i->next;
     }
+
     return cont;
 }
 
 int main(void)
 {
+    int vect[]={1,1,2,3,1,3,4,1};
     Item *list=NULL;
-    int c[59]={1,2,3,4,5,6,7,8,9};
-    for(int i=0;i<59;i++)
+    ElemType e=1;
+    for(int i=0;i<8;i++)
     {
-        list=ListInsertBack(list,&c[i]);
+        list=ListInsertBack(list,&vect[i]);
     }
-    ListLength(list);
+    ListOccorenze(list,&e);
     return 0;
 }
