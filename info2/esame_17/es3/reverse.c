@@ -18,7 +18,7 @@ Item *Reverse(Item *i)
 }
 
 
-/*
+
 int main(void)
 { 
     int vect[]={1,2,3,4};
@@ -30,4 +30,4 @@ int main(void)
     List= Reverse(List);
     ListWriteStdout(List);
     return 0;
-}*/
+}
